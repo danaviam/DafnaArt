@@ -354,6 +354,20 @@
             .container {
                 padding: 0 15px;
             }
+            
+            /* Mobile form improvements */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+            
+            .form-group textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -375,6 +389,25 @@
             
             section {
                 padding: 1.5rem;
+            }
+            
+            /* Fix form elements on mobile */
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                font-size: 16px; /* Prevents zoom on iOS */
+                padding: 0.8rem;
+                min-height: 44px; /* Touch target size */
+            }
+            
+            .form-group textarea {
+                min-height: 120px;
+                resize: vertical;
+            }
+            
+            .contact-form {
+                max-width: 100%;
+                padding: 0;
             }
         }
 		
