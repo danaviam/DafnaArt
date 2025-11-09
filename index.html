@@ -192,6 +192,7 @@
             justify-content: center;
             color: #666;
             font-size: 1.2rem;
+            border-radius: 15px 15px 0 0;
         }
 
         .artwork-info {
@@ -327,6 +328,12 @@
 
             .gallery {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .artwork img {
+                height: 280px;
+                font-size: 1rem;
             }
 
             section {
@@ -336,6 +343,38 @@
 
             .logo {
                 font-size: 1.5rem;
+            }
+            
+            .sold-stamp {
+                font-size: 1.5rem;
+                padding: 0.3rem 1.5rem;
+                letter-spacing: 8px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .artwork img {
+                height: 250px;
+            }
+            
+            .artwork-info {
+                padding: 1rem;
+            }
+            
+            .artwork-title {
+                font-size: 1.1rem;
+            }
+            
+            .artwork-price {
+                font-size: 1.3rem;
+            }
+            
+            section {
+                padding: 1.5rem;
             }
         }
 		
@@ -372,7 +411,7 @@
             <div class="gallery">
                 <!-- Sample Artwork 1 -->
                 <div class="artwork">
-                    <img src="bat_yam.jpeg" alt="בת הים היפה" onerror="this.innerHTML='🧜‍♀️ בת הים היפה'; this.style.display='flex';">
+                    <img src="bat_yam.jpeg" alt="בת הים היפה">
                     <div class="artwork-info">
                         <div class="artwork-title">בת הים היפה</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -383,7 +422,7 @@
 
                 <!-- Sample Artwork 2 -->
                 <div class="artwork">
-				<img src="shvil.jpeg" alt="לטיול יצאנו" onerror="this.innerHTML='👨‍👩‍👧‍👦 לטיול יצאנו'; this.style.display='flex';">
+				<img src="shvil.jpeg" alt="לטיול יצאנו">
 				<div class="artwork-info">
 						<div class="artwork-title">לטיול יצאנו</div>
 						<div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -394,7 +433,7 @@
 
                 <!-- Sample Artwork 3 -->
                 <div class="artwork sold-out">
-                    <img src="kelev.jpeg" alt="כלב חמוד" onerror="this.innerHTML='🐕 כלב'; this.style.display='flex';">
+                    <img src="kelev.jpeg" alt="הכלב החמוד שלנו">
 					<div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">הכלב החמוד שלנו</div>
@@ -406,7 +445,7 @@
 
                 <!-- Sample Artwork 4 -->
                 <div class="artwork">
-                    <img src="pilim.jpeg" alt="פילים בסוואנה" onerror="this.innerHTML='🐘 פילים בסוואנה'; this.style.display='flex';">
+                    <img src="pilim.jpeg" alt="פילים בסוואנה">
                     <div class="artwork-info">
                         <div class="artwork-title">פילים בסוואנה</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -417,7 +456,7 @@
 
                 <!-- Sample Artwork 5 -->
                 <div class="artwork">
-                    <img src="moana.jpeg" alt="הלב של טה-פיטי" onerror="this.innerHTML='🌊 הלב של טה-פיטי'; this.style.display='flex';">
+                    <img src="moana.jpeg" alt="הלב של טה-פיטי">
                     <div class="artwork-info">
                         <div class="artwork-title">הלב של טה-פיטי</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -428,7 +467,7 @@
 				
 				<!-- Sample Artwork 6 -->
                 <div class="artwork">
-                    <img src="icecream.jpeg" alt="גלידה שפריץ" onerror="this.innerHTML='🍧 גלידה שפריץ'; this.style.display='flex';">
+                    <img src="icecream.jpeg" alt="גלידה שפריץ">
                     <div class="artwork-info">
                         <div class="artwork-title">גלידה שפריץ</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -439,7 +478,7 @@
 				
 				<!-- Sample Artwork 7 -->
                 <div class="artwork">
-                    <img src="fox.jpeg" alt="השועל שהלך לאיבוד" onerror="this.innerHTML='🦊 השועל שהלך לאיבוד '; this.style.display='flex';">
+                    <img src="fox.jpeg" alt="השועל שהלך לאיבוד">
                     <div class="artwork-info">
                         <div class="artwork-title">השועל שהלך לאיבוד</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -450,7 +489,7 @@
 				
 				<!-- Sample Artwork 8 -->
                 <div class="artwork">
-                    <img src="ahava_isr.jpeg" alt=" אהבה ישראלית" onerror="this.innerHTML=' אהבה ישראלית'; this.style.display='flex';">
+                    <img src="ahava_isr.jpeg" alt="אהבה ישראלית">
                     <div class="artwork-info">
                         <div class="artwork-title"> אהבה ישראלית </div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -461,7 +500,7 @@
 				
 				<!-- Sample Artwork 9 -->
                 <div class="artwork">
-                    <img src="big_forest.jpeg" alt=" היער הגדול" onerror="this.innerHTML=' היער הגדול '; this.style.display='flex';">
+                    <img src="big_forest.jpeg" alt="היער הגדול">
                     <div class="artwork-info">
                         <div class="artwork-title"> היער הגדול </div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -472,7 +511,7 @@
 				
 				<!-- Sample Artwork 10 -->
                 <div class="artwork">
-                    <img src="girl_and_dog.jpeg" alt=" הילדה והכלב" onerror="this.innerHTML=' הילדה והכלב'; this.style.display='flex';">
+                    <img src="girl_and_dog.jpeg" alt="הילדה והכלב">
                     <div class="artwork-info">
                         <div class="artwork-title"> הילדה והכלב </div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -483,7 +522,7 @@
 								
 				<!-- Sample Artwork 11 -->
                 <div class="artwork">
-                    <img src="3in1.jpeg" alt=" פרחים" onerror="this.innerHTML=' *מבצע* - פרחים'; this.style.display='flex';">
+                    <img src="3in1.jpeg" alt="פרחים (3 ציורים במבצע)">
                     <div class="artwork-info">
                         <div class="artwork-title"> פרחים (3 ציורים במבצע)</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -494,7 +533,7 @@
 				
 				<!-- Sample Artwork 12 -->
                 <div class="artwork">
-                    <img src="uni-hourse.jpeg" alt="הסוס המהמם בעולם" onerror="this.innerHTML='הסוס המהמם בעולם'; this.style.display='flex';">
+                    <img src="uni-hourse.jpeg" alt="הסוס המהמם בעולם">
                     <div class="artwork-info">
                         <div class="artwork-title"> הסוס המהמם בעולם</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -505,7 +544,7 @@
 				
 				<!-- Sample Artwork 13 -->
                 <div class="artwork">
-                    <img src="dj_pinguin.jpeg" alt="DJ פינגויין" onerror="this.innerHTML='DJ פינגויין'; this.style.display='flex';">
+                    <img src="dj_pinguin.jpeg" alt="דיג'יי פינגויין">
                     <div class="artwork-info">
                         <div class="artwork-title">DJ פינגויין </div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -516,7 +555,7 @@
 				
 				<!-- Sample Artwork 14-->
                 <div class="artwork">
-                    <img src="bambi.jpeg" alt="אימא במבי והילדה" onerror="this.innerHTML='אימא במבי והילדה'; this.style.display='flex';">
+                    <img src="bambi.jpeg" alt="אימא במבי והילדה">
                     <div class="artwork-info">
                         <div class="artwork-title">אימא במבי והילדה</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -527,7 +566,7 @@
 				
 				<!-- Sample Artwork 15-->
                 <div class="artwork">
-                    <img src="night_wolf.jpeg" alt="זאב היללות" onerror="this.innerHTML='זאב היללות'; this.style.display='flex';">
+                    <img src="night_wolf.jpeg" alt="זאב היללות">
                     <div class="artwork-info">
                         <div class="artwork-title">זאב היללות</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -538,7 +577,7 @@
 				
 				<!-- Sample Artwork 16-->
                 <div class="artwork">
-                    <img src="north_deer.jpeg" alt="אייל הצפון" onerror="this.innerHTML='אייל הצפון'; this.style.display='flex';">
+                    <img src="north_deer.jpeg" alt="אייל הצפון">
                     <div class="artwork-info">
                         <div class="artwork-title">אייל הצפון</div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -549,7 +588,7 @@
 				
 				<!-- Sample Artwork 17-->
                 <div class="artwork">
-                    <img src="cute_animals.jpeg" alt=" חיות מתכרבלות" onerror="this.innerHTML=' חיות מתכרבלות '; this.style.display='flex';">
+                    <img src="cute_animals.jpeg" alt="חיות מתכרבלות">
                     <div class="artwork-info">
                         <div class="artwork-title"> חיות מתכרבלות </div>
                         <div class="artwork-artist">מאת דפנה, בת 7.5</div>
@@ -744,6 +783,38 @@
             submitButton.disabled = false;
         }
     }
+
+        // Function to handle image loading errors
+        function handleImageError(img, fallbackText) {
+            img.style.display = 'flex';
+            img.style.alignItems = 'center';
+            img.style.justifyContent = 'center';
+            img.style.background = 'linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #a8edea)';
+            img.style.color = '#666';
+            img.style.fontSize = '1.2rem';
+            img.style.fontWeight = 'bold';
+            img.innerHTML = fallbackText;
+        }
+
+        // Initialize image error handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.artwork img');
+            images.forEach(img => {
+                const fallbackText = img.getAttribute('alt');
+                
+                // Check if image failed to load
+                img.addEventListener('error', function() {
+                    handleImageError(this, `🎨 ${fallbackText}`);
+                });
+                
+                // Also check if image is still loading after 3 seconds (mobile issue)
+                setTimeout(() => {
+                    if (!img.complete || img.naturalHeight === 0) {
+                        handleImageError(img, `🎨 ${fallbackText}`);
+                    }
+                }, 3000);
+            });
+        });
 
         // Add some animation on scroll
         const observerOptions = {
