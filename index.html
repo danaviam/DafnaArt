@@ -61,6 +61,12 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            list-style: none;
         }
 
         .nav-links a {
@@ -315,7 +321,18 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
-                gap: 1rem;
+                gap: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .nav-links a {
+                padding: 0.5rem 0.8rem;
+                white-space: nowrap;
             }
 
             h1 {
@@ -371,6 +388,29 @@
         }
         
         @media (max-width: 480px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+            
+            .nav-links {
+                gap: 0.3rem;
+                font-size: 0.8rem;
+                flex-shrink: 1;
+            }
+            
+            .nav-links a {
+                padding: 0.4rem 0.5rem;
+                font-size: 0.8rem;
+            }
+            
             .artwork img {
                 height: 250px;
             }
@@ -423,7 +463,7 @@
     <header>
         <nav class="container">
             <div class="logo">🎨 אמניות צעירות</div>
-            <ul class="nav-links" style="font-size:clamp(0.85rem,2.8vw,1rem); gap:1rem;"></ul>
+            <ul class="nav-links">
                 <li><a href="#gallery">גלריה</a></li>
                 <li><a href="#about">אודות</a></li>
                 <li><a href="#contact">צור קשר</a></li>
