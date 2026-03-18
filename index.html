@@ -885,8 +885,8 @@
             
             <!-- Filter Controls -->
             <div class="filter-controls" style="opacity: 1 !important; visibility: visible !important;">
-                <button class="filter-btn active" onclick="filterArtworks('all')">הכל</button>
-                <button class="filter-btn" onclick="filterArtworks('available')">זמין</button>
+                <button class="filter-btn" onclick="filterArtworks('all')">הכל</button>
+                <button class="filter-btn active" onclick="filterArtworks('available')">זמין</button>
                 <button class="filter-btn" onclick="filterArtworks('sold')">נמכר</button>
                 <button class="filter-btn" onclick="sortArtworks('price-low')">מחיר: נמוך לגבוה</button>
                 <button class="filter-btn" onclick="sortArtworks('price-high')">מחיר: גבוה לנמוך</button>
@@ -1390,6 +1390,20 @@
                 element.style.visibility = 'visible';
                 element.style.display = '';
             });
+            
+            // Set default filter to "available"
+            const artworks = document.querySelectorAll('.artwork');
+            artworks.forEach(artwork => {
+                const status = artwork.getAttribute('data-status');
+                if (status !== 'available') {
+                    artwork.style.display = 'none';
+                }
+            });
+            
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[1].classList.add('active'); // Second button is "זמין"
             
             const images = document.querySelectorAll('.artwork img');
             images.forEach(img => {
