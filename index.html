@@ -8,17 +8,25 @@
     <meta property="og:title" content="גלריית האמניות הצעירות - ציורים של דפנה">
     <meta property="og:description" content="גלו יצירות אמנות יפהפיות שנוצרו על ידי אמנית צעירה ומוכשרת">
     <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            font-family: 'Arial', 'Tahoma', sans-serif;
+            font-family: 'Heebo', 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
             background: 
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 300 250'%3E%3C!-- Heart doodle --%3E%3Cpath d='M50 80 C40 70, 25 70, 25 85 C25 100, 50 120, 50 120 C50 120, 75 100, 75 85 C75 70, 60 70, 50 80 Z' fill='none' stroke='%23ff69b4' stroke-width='2' opacity='0.10'/%3E%3C!-- Star doodle --%3E%3Cpath d='M200 50 L205 65 L220 65 L208 75 L213 90 L200 80 L187 90 L192 75 L180 65 L195 65 Z' fill='none' stroke='%23da70d6' stroke-width='2' opacity='0.15'/%3E%3C!-- Flower doodle --%3E%3Ccircle cx='100' cy='180' r='8' fill='none' stroke='%23ffb6c1' stroke-width='2' opacity='0.15'/%3E%3Ccircle cx='90' cy='170' r='6' fill='none' stroke='%23ffb6c1' stroke-width='2' opacity='0.15'/%3E%3Ccircle cx='110' cy='170' r='6' fill='none' stroke='%23ffb6c1' stroke-width='2' opacity='0.15'/%3E%3Ccircle cx='90' cy='190' r='6' fill='none' stroke='%23ffb6c1' stroke-width='2' opacity='0.15'/%3E%3Ccircle cx='110' cy='190' r='6' fill='none' stroke='%23ffb6c1' stroke-width='2' opacity='0.15'/%3E%3Cline x1='100' y1='188' x2='100' y2='210' stroke='%2390EE90' stroke-width='2' opacity='0.15'/%3E%3C!-- Cloud doodle --%3E%3Cpath d='M250 150 C240 150, 235 140, 245 140 C240 130, 255 130, 260 140 C270 135, 275 145, 265 150 Z' fill='none' stroke='%23dda0dd' stroke-width='2' opacity='0.15'/%3E%3C/svg%3E"),
                 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='300' viewBox='0 0 280 300'%3E%3C!-- Sun doodle --%3E%3Ccircle cx='60' cy='60' r='15' fill='none' stroke='%23ff1493' stroke-width='2' opacity='0.15'/%3E%3Cline x1='60' y1='35' x2='60' y2='25' stroke='%23ff1493' stroke-width='2' opacity='0.15'/%3E%3Cline x1='60' y1='85' x2='60' y2='95' stroke='%23ff1493' stroke-width='2' opacity='0.15'/%3E%3Cline x1='35' y1='60' x2='25' y2='60' stroke='%23ff1493' stroke-width='2' opacity='0.15'/%3E%3Cline x1='85' y1='60' x2='95' y2='60' stroke='%23ff1493' stroke-width='2' opacity='0.15'/%3E%3C!-- Butterfly doodle --%3E%3Cpath d='M180 120 C175 115, 175 125, 180 120 C185 115, 185 125, 180 120' fill='none' stroke='%23c71585' stroke-width='2' opacity='0.15'/%3E%3Cpath d='M170 115 C165 110, 165 120, 170 115 C175 110, 175 120, 170 115' fill='none' stroke='%23c71585' stroke-width='2' opacity='0.15'/%3E%3Cline x1='180' y1='110' x2='180' y2='130' stroke='%23c71585' stroke-width='2' opacity='0.15'/%3E%3C!-- House doodle --%3E%3Crect x='25' y='200' width='25' height='30' fill='none' stroke='%23ba55d3' stroke-width='2' opacity='0.15'/%3E%3Cpath d='M35 200 L60 180 L85 200' fill='none' stroke='%23ba55d3' stroke-width='2' opacity='0.15'/%3E%3Crect x='50' y='210' width='8' height='15' fill='none' stroke='%23ba55d3' stroke-width='2' opacity='0.15'/%3E%3C!-- Rainbow doodle --%3E%3Cpath d='M200 250 C210 225, 230 225, 225 250' fill='none' stroke='%23ff69b4' stroke-width='2' opacity='0.15'/%3E%3Cpath d='M205 255 C215 245, 225 245, 235 255' fill='none' stroke='%23da70d6' stroke-width='2' opacity='0.15'/%3E%3C/svg%3E"),
@@ -55,10 +63,17 @@
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #667eea;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #f093fb;
         }
 
         .nav-links {
@@ -75,10 +90,17 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #2c3e50;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-links a i {
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover {
@@ -739,45 +761,55 @@
         }
 
         .share-btn {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .share-btn:hover {
-            transform: translateY(-3px) scale(1.1);
+            transform: translateY(-5px) scale(1.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .share-whatsapp {
-            background: #25D366;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
         }
 
         .share-facebook {
-            background: #1877F2;
+            background: linear-gradient(135deg, #1877F2, #4267B2);
             color: white;
         }
 
         .share-twitter {
-            background: #1DA1F2;
+            background: linear-gradient(135deg, #1DA1F2, #0d8bd9);
             color: white;
         }
 
         /* Mobile Menu Toggle */
         .mobile-menu-toggle {
             display: none;
-            background: none;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #667eea;
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -826,22 +858,27 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">🎨 אמניות צעירות</div>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <div class="logo">
+                <i class="fas fa-palette"></i>
+                <span>אמניות צעירות</span>
+            </div>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#gallery" onclick="closeMobileMenu()">גלריה</a></li>
-                <li><a href="#about" onclick="closeMobileMenu()">אודות</a></li>
-                <li><a href="#testimonials" onclick="closeMobileMenu()">המלצות</a></li>
-                <li><a href="#contact" onclick="closeMobileMenu()">צור קשר</a></li>
+                <li><a href="#gallery" onclick="closeMobileMenu()"><i class="fas fa-images"></i> גלריה</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()"><i class="fas fa-user"></i> אודות</a></li>
+                <li><a href="#testimonials" onclick="closeMobileMenu()"><i class="fas fa-star"></i> המלצות</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()"><i class="fas fa-envelope"></i> צור קשר</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container" style="opacity: 1 !important; visibility: visible !important;">
         <section id="hero" style="opacity: 1 !important; visibility: visible !important;">
-            <h1>ברוכים הבאים לגלריית האומנות של דפנה</h1>
+            <h1><i class="fas fa-sparkles" style="color: #f093fb; font-size: 2.5rem;"></i> ברוכים הבאים לגלריית האומנות של דפנה <i class="fas fa-sparkles" style="color: #f093fb; font-size: 2.5rem;"></i></h1>
             <p style="text-align: center; font-size: 1.3rem; color: #555; margin-top: 1rem;">
-                גלו יצירות אמנות יפהפיות שנוצרו על ידי אמנית צעירה ומוכשרת
+                <i class="fas fa-paint-brush" style="color: #667eea;"></i> גלו יצירות אמנות יפהפיות שנוצרו על ידי אמנית צעירה ומוכשרת <i class="fas fa-heart" style="color: #ff69b4;"></i>
             </p>
         </section>
 
@@ -855,9 +892,9 @@
                 <p>ואני שמחה מאוד שאתם קונים ממני את הציורים שלי!🥇</p>
                 
                 <div class="share-buttons">
-                    <a href="https://wa.me/?text=בואו לראות את הציורים המדהימים של דפנה! 🎨" target="_blank" class="share-btn share-whatsapp" title="שתף בוואטסאפ">💬</a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-btn share-facebook" title="שתף בפייסבוק">📘</a>
-                    <a href="https://twitter.com/intent/tweet?text=בואו לראות את הציורים המדהימים של דפנה! 🎨" target="_blank" class="share-btn share-twitter" title="שתף בטוויטר">🐦</a>
+                    <a href="https://wa.me/?text=בואו לראות את הציורים המדהימים של דפנה! 🎨" target="_blank" class="share-btn share-whatsapp" title="שתף בוואטסאפ"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-btn share-facebook" title="שתף בפייסבוק"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/intent/tweet?text=בואו לראות את הציורים המדהימים של דפנה! 🎨" target="_blank" class="share-btn share-twitter" title="שתף בטוויטר"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
         </section>
@@ -867,11 +904,11 @@
             
             <!-- Filter Controls -->
             <div class="filter-controls" style="opacity: 1 !important; visibility: visible !important;">
-                <button class="filter-btn" onclick="filterArtworks('all')">הכל</button>
-                <button class="filter-btn active" onclick="filterArtworks('available')">זמין</button>
-                <button class="filter-btn" onclick="filterArtworks('sold')">נמכר</button>
-                <button class="filter-btn" onclick="sortArtworks('price-low')">מחיר: נמוך לגבוה</button>
-                <button class="filter-btn" onclick="sortArtworks('price-high')">מחיר: גבוה לנמוך</button>
+                <button class="filter-btn" onclick="filterArtworks('all')"><i class="fas fa-th"></i> הכל</button>
+                <button class="filter-btn active" onclick="filterArtworks('available')"><i class="fas fa-check-circle"></i> זמין</button>
+                <button class="filter-btn" onclick="filterArtworks('sold')"><i class="fas fa-tag"></i> נמכר</button>
+                <button class="filter-btn" onclick="sortArtworks('price-low')"><i class="fas fa-sort-amount-down"></i> מחיר: נמוך לגבוה</button>
+                <button class="filter-btn" onclick="sortArtworks('price-high')"><i class="fas fa-sort-amount-up"></i> מחיר: גבוה לנמוך</button>
             </div>
             
             <div class="gallery" id="galleryContainer" style="opacity: 1 !important; visibility: visible !important; display: grid !important;">
@@ -931,7 +968,7 @@
                         <div class="artwork-title">הלב של טה-פיטי</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
                         <div class="artwork-price">₪20<span class="price-symbol"></span></div>
-                        <button class="order-btn" onclick="orderArtwork('הלב של טה-פיטי', '₪20')">הזמן ציור זה</button>
+                        <button class="order-btn" onclick="orderArtwork('הלב של טה-פיטי', '₪20')"><i class="fas fa-shopping-cart"></i> הזמן ציור זה</button>
                     </div>
                 </div>
 				
@@ -943,7 +980,7 @@
                         <div class="artwork-title">גלידה שפריץ</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
                         <div class="artwork-price">₪200<span class="price-symbol"></span></div>
-                        <button class="order-btn" onclick="orderArtwork('גלידה שפריץ', '₪200')">הזמן ציור זה</button>
+                        <button class="order-btn" onclick="orderArtwork('גלידה שפריץ', '₪200')"><i class="fas fa-shopping-cart"></i> הזמן ציור זה</button>
                     </div>
                 </div>
 				
@@ -967,7 +1004,7 @@
                         <div class="artwork-title">אהבה ישראלית</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
                         <div class="artwork-price">₪20<span class="price-symbol"></span></div>
-                        <button class="order-btn" onclick="orderArtwork('אהבה ישראלית', '₪20')">הזמן ציור זה</button>
+                        <button class="order-btn" onclick="orderArtwork('אהבה ישראלית', '₪20')"><i class="fas fa-shopping-cart"></i> הזמן ציור זה</button>
                     </div>
                 </div>
 				
@@ -978,7 +1015,7 @@
                         <div class="artwork-title">היער הגדול</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
                         <div class="artwork-price">₪20<span class="price-symbol"></span></div>
-                        <button class="order-btn" onclick="orderArtwork('היער הגדול', '₪20')">הזמן ציור זה</button>
+                        <button class="order-btn" onclick="orderArtwork('היער הגדול', '₪20')"><i class="fas fa-shopping-cart"></i> הזמן ציור זה</button>
                     </div>
                 </div>
 				
@@ -1168,19 +1205,22 @@
         </section>
 
         <section id="testimonials" style="opacity: 1 !important; visibility: visible !important;">
-            <h2>מה אומרים הלקוחות שלנו</h2>
+            <h2><i class="fas fa-star" style="color: #ffd93d;"></i> מה אומרים הלקוחות שלנו <i class="fas fa-star" style="color: #ffd93d;"></i></h2>
             <div class="testimonials">
                 <div class="testimonial">
-                    <div class="testimonial-text">"הציור של בת הים היפה תלוי בחדר של הבת שלי והיא מאוד אוהבת אותו! איזו אמנית מוכשרת! 💕"</div>
-                    <div class="testimonial-author">- שרה כהן</div>
+                    <i class="fas fa-quote-right" style="color: #667eea; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <div class="testimonial-text">הציור של בת הים היפה תלוי בחדר של הבת שלי והיא מאוד אוהבת אותו! איזו אמנית מוכשרת! 💕</div>
+                    <div class="testimonial-author"><i class="fas fa-user-circle"></i> שרה כהן</div>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial-text">"קניתי את הציור של הכלב החמוד למשרד שלי. כל מי שנכנס מתפעל! דפנה, את מדהימה! 🎨"</div>
-                    <div class="testimonial-author">- יוסי לוי</div>
+                    <i class="fas fa-quote-right" style="color: #667eea; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <div class="testimonial-text">קניתי את הציור של הכלב החמוד למשרד שלי. כל מי שנכנס מתפעל! דפנה, את מדהימה! 🎨</div>
+                    <div class="testimonial-author"><i class="fas fa-user-circle"></i> יוסי לוי</div>
                 </div>
                 <div class="testimonial">
-                    <div class="testimonial-text">"הציורים כל כך צבעוניים ומשמחים! קניתי שלושה ציורים ואני מאוד מרוצה. ממליצה בחום! ⭐"</div>
-                    <div class="testimonial-author">- מיכל אברהם</div>
+                    <i class="fas fa-quote-right" style="color: #667eea; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <div class="testimonial-text">הציורים כל כך צבעוניים ומשמחים! קניתי שלושה ציורים ואני מאוד מרוצה. ממליצה בחום! ⭐</div>
+                    <div class="testimonial-author"><i class="fas fa-user-circle"></i> מיכל אברהם</div>
                 </div>
             </div>
         </section>
@@ -1235,7 +1275,7 @@
                 <textarea id="comments" name="comments" rows="3" placeholder="ספר לנו אם יש לך שאלות או בקשות מיוחדות..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn" id="submit-button">שלח הזמנה</button>
+            <button type="submit" class="submit-btn" id="submit-button"><i class="fas fa-paper-plane"></i> שלח הזמנה</button>
         </form>
         
         <!-- Success/Error messages -->
@@ -1258,7 +1298,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; גלריית האומנות של דפנה // נעשה באהבה 2026.</p>
+            <p><i class="fas fa-heart" style="color: #ff69b4;"></i> &copy; 2026 גלריית האומנות של דפנה - נעשה באהבה <i class="fas fa-palette" style="color: #f093fb;"></i></p>
         </div>
     </footer>
 
