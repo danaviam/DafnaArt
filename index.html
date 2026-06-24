@@ -192,27 +192,6 @@
             transition: all 0.3s ease;
             position: relative;
         }
-		
-		.artwork.sold-out img {
-			filter: grayscale(60%) brightness(0.8);
-			opacity: 0.7;
-		}
-		.sold-stamp {
-			position: absolute;
-			top: 30%;
-			left: 50%;
-			transform: translateX(-50%) rotate(-15deg);
-			background: rgba(255, 0, 64, 0.55);
-			color: #fff;
-			font-size: 2rem;
-			font-weight: bold;
-			padding: 0.5rem 2rem;
-			border-radius: 20px;
-			box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-			z-index: 2;
-			pointer-events: none;
-			letter-spacing: 15px;
-		}
 
         .artwork:hover {
             transform: translateY(-10px) rotate(-1deg);
@@ -402,12 +381,6 @@
 
             .logo {
                 font-size: 1.5rem;
-            }
-            
-            .sold-stamp {
-                font-size: 1.5rem;
-                padding: 0.3rem 1.5rem;
-                letter-spacing: 8px;
             }
             
             .container {
@@ -915,7 +888,6 @@
                 <!-- Sample Artwork 1 -->
                 <div class="artwork sold-out" data-price="25" data-status="sold">
                     <img src="paints/bat_yam.jpeg" alt="בת הים היפה" onclick="openLightbox(this)">
-					<div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">בת הים היפה</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -927,7 +899,6 @@
                 <!-- Sample Artwork 2 -->
                 <div class="artwork sold-out" data-price="25" data-status="sold">
 				<img src="paints/shvil.jpeg" alt="לטיול יצאנו" onclick="openLightbox(this)">
-				<div class="sold-stamp">נמכר!</div>
 				<div class="artwork-info">
 						<div class="artwork-title">לטיול יצאנו</div>
 						<div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -939,7 +910,6 @@
                 <!-- Sample Artwork 3 -->
                 <div class="artwork sold-out" data-price="75" data-status="sold">
                     <img src="paints/kelev.jpeg" alt="הכלב החמוד שלנו" onclick="openLightbox(this)">
-					<div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">הכלב החמוד שלנו</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -951,7 +921,6 @@
                 <!-- Sample Artwork 4 -->
                 <div class="artwork sold-out" data-price="30" data-status="sold">
                     <img src="paints/pilim.jpeg" alt="פילים בסוואנה" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">פילים בסוואנה</div>
                         <div class="artwork-artist">מאת דפנה, בת 7</div>
@@ -987,7 +956,6 @@
 				<!-- Sample Artwork 7 -->
                 <div class="artwork sold-out" data-price="30" data-status="sold">
                     <img src="paints/fox.jpeg" alt="השועל שהלך לאיבוד" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">השועל שהלך לאיבוד</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1022,7 +990,6 @@
 				<!-- Sample Artwork 10 -->
                 <div class="artwork sold-out" data-price="20" data-status="sold">
                     <img src="paints/girl_and_dog.jpeg" alt="הילדה והכלב" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">הילדה והכלב</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1035,7 +1002,6 @@
                 <div class="artwork sold-out" data-price="20" data-status="sold">
                     <span class="badge badge-sale">מבצע!</span>
                     <img src="paints/3in1.jpeg" alt="פרחים (3 ציורים במבצע)" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">פרחים (3 ציורים במבצע)</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1047,7 +1013,6 @@
 				<!-- Sample Artwork 12 -->
                 <div class="artwork sold-out" data-price="60" data-status="sold">
                     <img src="paints/uni-hourse.jpeg" alt="הסוס המהמם בעולם" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">הסוס המהמם בעולם</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1059,7 +1024,6 @@
 				<!-- Sample Artwork 13 -->
                 <div class="artwork sold-out" data-price="25" data-status="sold">
                     <img src="paints/dj_pinguin.jpeg" alt="דיג'יי פינגויין" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">DJ פינגויין</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1071,7 +1035,6 @@
 				<!-- Sample Artwork 14-->
                 <div class="artwork sold-out" data-price="40" data-status="sold">
                     <img src="paints/bambi.jpeg" alt="אימא במבי והילדה" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">אימא במבי והילדה</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1083,7 +1046,6 @@
 				<!-- Sample Artwork 15-->
                 <div class="artwork sold-out" data-price="60" data-status="sold">
 					<img src="paints/night_wolf.jpeg" alt="זאב היללות" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">זאב היללות</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1095,7 +1057,6 @@
 				<!-- Sample Artwork 16-->
                 <div class="artwork sold-out" data-price="50" data-status="sold">
                     <img src="paints/north_deer.jpeg" alt="אייל הצפון" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">אייל הצפון</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1107,7 +1068,6 @@
 				<!-- Sample Artwork 17-->
                 <div class="artwork sold-out" data-price="30" data-status="sold">
                     <img src="paints/cute_animals.jpeg" alt="חיות מתכרבלות" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">חיות מתכרבלות</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1120,7 +1080,6 @@
                 <div class="artwork sold-out" data-price="20" data-status="sold">
                     <span class="badge badge-sale">מבצע!</span>
                     <img src="paints/3in1.jpeg" alt="פרחים (3 ציורים במבצע)" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">פרחים (3 ציורים במבצע)</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1132,7 +1091,6 @@
 				<!-- Sample Artwork 12 -->
                 <div class="artwork sold-out" data-price="60" data-status="sold">
                     <img src="paints/uni-hourse.jpeg" alt="הסוס המהמם בעולם" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">הסוס המהמם בעולם</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1144,7 +1102,6 @@
 				<!-- Sample Artwork 13 -->
                 <div class="artwork sold-out" data-price="25" data-status="sold">
                     <img src="paints/dj_pinguin.jpeg" alt="דיג'יי פינגויין" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">DJ פינגויין</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1156,7 +1113,6 @@
 				<!-- Sample Artwork 14-->
                 <div class="artwork sold-out" data-price="40" data-status="sold">
                     <img src="paints/bambi.jpeg" alt="אימא במבי והילדה" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">אימא במבי והילדה</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1168,7 +1124,6 @@
 				<!-- Sample Artwork 15-->
                 <div class="artwork sold-out" data-price="60" data-status="sold">
 					<img src="paints/night_wolf.jpeg" alt="זאב היללות" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">זאב היללות</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1180,7 +1135,6 @@
 				<!-- Sample Artwork 16-->
                 <div class="artwork sold-out" data-price="50" data-status="sold">
                     <img src="paints/north_deer.jpeg" alt="אייל הצפון" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">אייל הצפון</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
@@ -1192,7 +1146,6 @@
 				<!-- Sample Artwork 17-->
                 <div class="artwork sold-out" data-price="30" data-status="sold">
                     <img src="paints/cute_animals.jpeg" alt="חיות מתכרבלות" onclick="openLightbox(this)">
-                    <div class="sold-stamp">נמכר!</div>
                     <div class="artwork-info">
                         <div class="artwork-title">חיות מתכרבלות</div>
                         <div class="artwork-artist">מאת דפנה, בת 8</div>
