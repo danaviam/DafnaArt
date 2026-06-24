@@ -1446,18 +1446,10 @@
         function openLightbox(imgElement) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxTitle = document.getElementById('lightbox-title');
-            const lightboxPrice = document.getElementById('lightbox-price');
-            
-            const artworkCard = imgElement.closest('.artwork');
-            const title = artworkCard.querySelector('.artwork-title').textContent;
-            const price = artworkCard.querySelector('.artwork-price').textContent;
-            
+
             lightboxImg.src = imgElement.src;
             lightboxImg.alt = imgElement.alt;
-            lightboxTitle.textContent = title;
-            lightboxPrice.textContent = price;
-            
+
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
