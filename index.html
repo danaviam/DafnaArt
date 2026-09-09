@@ -733,6 +733,180 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ===================== Admin Panel ===================== */
+        .admin-panel {
+            background: linear-gradient(135deg, #fff9e6, #fdf2ff);
+            border-bottom: 4px dashed #764ba2;
+            padding: 2rem 1rem;
+        }
+
+        .admin-panel-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-lock {
+            max-width: 360px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .admin-lock p {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .admin-lock input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e0d4f0;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .admin-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .admin-btn.secondary {
+            background: linear-gradient(135deg, #b0a8c0, #8e8899);
+        }
+
+        .admin-error {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-top: 0.8rem;
+        }
+
+        .admin-header h2 {
+            text-align: center;
+            color: #764ba2;
+            margin-bottom: 1rem;
+        }
+
+        .admin-note {
+            background: white;
+            border-right: 5px solid #ff69b4;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .admin-list {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .admin-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            border-radius: 15px;
+            padding: 0.9rem 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .admin-row.is-sold {
+            opacity: 0.75;
+        }
+
+        .admin-thumb {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+        }
+
+        .admin-row-title {
+            font-weight: bold;
+            color: #333;
+            flex: 1 1 150px;
+            min-width: 150px;
+        }
+
+        .admin-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .admin-field input,
+        .admin-field select {
+            padding: 0.5rem 0.7rem;
+            border: 2px solid #e0d4f0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #2c3e50;
+            background: white;
+            min-width: 120px;
+        }
+
+        .admin-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .admin-exit {
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .admin-row {
+                gap: 0.7rem;
+            }
+
+            .admin-row-title {
+                flex: 1 1 100%;
+                min-width: 0;
+            }
+
+            .admin-field {
+                flex: 1 1 45%;
+            }
+
+            .admin-field input,
+            .admin-field select {
+                min-width: 0;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -753,6 +927,34 @@
             </ul>
         </nav>
     </header>
+
+    <!-- ===================== Admin Panel (?admin) ===================== -->
+    <section id="adminPanel" class="admin-panel" hidden>
+        <div class="admin-panel-inner">
+            <div id="adminLock" class="admin-lock">
+                <p><i class="fas fa-lock"></i> מצב ניהול - הזינו קוד גישה</p>
+                <input type="password" id="adminPasscodeInput" placeholder="קוד גישה" autocomplete="off">
+                <div><button type="button" class="admin-btn" onclick="tryUnlockAdmin()">כניסה</button></div>
+                <p id="adminLockError" class="admin-error" hidden>קוד שגוי, נסו שוב.</p>
+            </div>
+            <div id="adminContent" hidden>
+                <div class="admin-header">
+                    <h2><i class="fas fa-sliders-h"></i> ניהול הגלריה</h2>
+                    <p class="admin-note">
+                        עדכנו כאן מחירים וסמנו ציורים כ"נמכר". השינויים מופיעים מיד בגלריה שלמטה - אבל <strong>רק בדפדפן הזה</strong>, האתר האמיתי עדיין לא השתנה.<br>
+                        כדי שכולם יראו את השינויים: לחצו על <strong>"הורדת קובץ מעודכן"</strong>, ואז העלו את הקובץ שהתקבל ל-GitHub במקום ה-index.html הקיים (Add file → Upload files → Commit).<br>
+                        השינויים נשמרים זמנית בדפדפן ולכן ישרדו רענון של הדף, אבל ייעלמו כשתסגרו את הכרטיסייה. שימו לב: קוד הגישה אינו אבטחה אמיתית (הוא גלוי בקוד המקור) - הוא רק מונע כניסה מקרית.
+                    </p>
+                </div>
+                <div id="adminList" class="admin-list"></div>
+                <div class="admin-actions">
+                    <button type="button" class="admin-btn" onclick="exportUpdatedSite()"><i class="fas fa-download"></i> הורדת קובץ מעודכן</button>
+                    <button type="button" class="admin-btn secondary" onclick="discardAdminChanges()"><i class="fas fa-undo"></i> ביטול השינויים</button>
+                    <a href="?" class="admin-exit">יציאה ממצב ניהול</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main class="container">
         <section id="hero">
@@ -1316,6 +1518,366 @@
             
             artworks.forEach(artwork => gallery.appendChild(artwork));
         }
+
+        /* ===================== Admin Panel =====================
+           פתיחת מצב ניהול: הוסיפו ?admin לכתובת הדף.
+           לדוגמה: https://danaviam.github.io/DafnaArt/?admin           */
+        (function () {
+            'use strict';
+
+            /* קוד הגישה לפאנל הניהול - אפשר לשנות אותו כאן.
+               זו אינה אבטחה אמיתית: הקוד גלוי לכל מי שיפתח את קוד המקור
+               של הדף. הוא נועד רק למנוע כניסה מקרית של מבקרים. */
+            var ADMIN_PASSCODE = 'dafna2026';
+
+            var UNLOCK_KEY = 'dafnaAdminUnlocked';
+            var DRAFT_KEY = 'dafnaAdminDraft';
+
+            var panel = document.getElementById('adminPanel');
+            var gallery = document.getElementById('galleryContainer');
+            if (!panel || !gallery) { return; }
+
+            var lockBox = document.getElementById('adminLock');
+            var contentBox = document.getElementById('adminContent');
+            var listBox = document.getElementById('adminList');
+            var passInput = document.getElementById('adminPasscodeInput');
+            var lockError = document.getElementById('adminLockError');
+
+            var BADGE_LABELS = { 'new': 'חדש!', 'popular': 'פופולרי!', 'sale': 'מבצע!' };
+
+            // ---------- קריאת נתונים מכרטיסי הגלריה ----------
+            function cards() {
+                return Array.prototype.slice.call(gallery.querySelectorAll('.artwork'));
+            }
+            function srcOf(card) {
+                var img = card.querySelector('img');
+                return img ? img.getAttribute('src') : '';
+            }
+            function titleOf(card) {
+                var el = card.querySelector('.artwork-title');
+                return el ? el.textContent.trim() : '';
+            }
+            function priceOf(card) {
+                return parseInt(card.getAttribute('data-price'), 10) || 0;
+            }
+            function statusOf(card) {
+                return card.getAttribute('data-status') === 'sold' ? 'sold' : 'available';
+            }
+            function badgeOf(card) {
+                var b = card.querySelector('.badge');
+                if (!b) { return ''; }
+                if (b.classList.contains('badge-new')) { return 'new'; }
+                if (b.classList.contains('badge-popular')) { return 'popular'; }
+                if (b.classList.contains('badge-sale')) { return 'sale'; }
+                return '';
+            }
+            function escapeHtml(str) {
+                return String(str).replace(/[&<>"']/g, function (c) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+                });
+            }
+
+            /* סדר הציורים המקורי בקובץ, לפי שם קובץ התמונה. משמש כדי להחזיר
+               את הסדר המקורי בקובץ המיוצא, גם אם מיינו את הגלריה. */
+            var originalOrder = cards().map(srcOf);
+
+            /* הערת ה-HTML שמופיעה לפני כל כרטיס בקובץ המקורי
+               (למשל "Artwork 3"), כדי לשחזר אותה בקובץ המיוצא. */
+            var originalComments = (function () {
+                var map = {};
+                var pendingComment = null;
+                Array.prototype.forEach.call(gallery.childNodes, function (node) {
+                    if (node.nodeType === 8) {
+                        pendingComment = node.nodeValue;
+                    } else if (node.nodeType === 1 && node.classList.contains('artwork')) {
+                        if (pendingComment !== null) { map[srcOf(node)] = pendingComment; }
+                        pendingComment = null;
+                    }
+                });
+                return map;
+            })();
+
+            var formMessageStyle = (function () {
+                var el = document.getElementById('form-message');
+                return el ? el.getAttribute('style') : null;
+            })();
+
+            // ---------- כתיבת נתונים לכרטיסי הגלריה ----------
+            function syncOrderButton(card) {
+                var btn = card.querySelector('.order-btn');
+                if (!btn) { return; }
+                if (statusOf(card) === 'sold') {
+                    btn.removeAttribute('onclick');
+                    btn.onclick = null;
+                    btn.disabled = true;
+                    btn.setAttribute('style', 'background: #ccc; cursor: not-allowed;');
+                    btn.textContent = 'נמכר';
+                } else {
+                    btn.disabled = false;
+                    btn.removeAttribute('style');
+                    btn.setAttribute('onclick', 'orderArtwork(' +
+                        JSON.stringify(titleOf(card)) + ', ' +
+                        JSON.stringify('₪' + priceOf(card)) + ')');
+                    btn.innerHTML = '<i class="fas fa-shopping-cart"></i> הזמן ציור זה';
+                }
+            }
+
+            function setPrice(card, price) {
+                var value = Math.max(0, Math.round(Number(price) || 0));
+                card.setAttribute('data-price', String(value));
+                var priceEl = card.querySelector('.artwork-price');
+                if (priceEl) {
+                    priceEl.innerHTML = '₪' + value + '<span class="price-symbol"></span>';
+                }
+                syncOrderButton(card);
+            }
+
+            function setStatus(card, status) {
+                var value = status === 'sold' ? 'sold' : 'available';
+                card.setAttribute('data-status', value);
+                card.classList.toggle('sold-out', value === 'sold');
+                syncOrderButton(card);
+            }
+
+            function setBadge(card, badge) {
+                var existing = card.querySelector('.badge');
+                if (existing) { existing.parentNode.removeChild(existing); }
+                if (!BADGE_LABELS[badge]) { return; }
+                var span = document.createElement('span');
+                span.className = 'badge badge-' + badge;
+                span.textContent = BADGE_LABELS[badge];
+                card.insertBefore(span, card.firstChild);
+            }
+
+            /* בניית רשימת הציורים בטופס ההזמנה מתוך הגלריה,
+               כדי שהמחירים בטופס תמיד יתאימו למחירים המוצגים. */
+            function syncOrderForm() {
+                var select = document.getElementById('requested_paint');
+                if (!select) { return; }
+                var indent = '\n                    ';
+                var options = ['<option value="">בחר ציור...</option>'];
+                cards().forEach(function (card) {
+                    var label = titleOf(card) + ' - ₪' + priceOf(card) +
+                        (statusOf(card) === 'sold' ? ' - נמכר' : '');
+                    options.push('<option value="' + escapeHtml(label) + '">' + escapeHtml(label) + '</option>');
+                });
+                options.push('<option value="אחר">אחר (אנא פרט בהערות)</option>');
+                select.innerHTML = indent + options.join(indent) + '\n                ';
+            }
+
+            // ---------- טיוטה זמנית (נשמרת לכרטיסייה הנוכחית בלבד) ----------
+            function readDraft() {
+                try {
+                    return JSON.parse(sessionStorage.getItem(DRAFT_KEY)) || null;
+                } catch (e) {
+                    return null;
+                }
+            }
+            function saveDraft() {
+                var data = {};
+                cards().forEach(function (card) {
+                    data[srcOf(card)] = {
+                        price: priceOf(card),
+                        status: statusOf(card),
+                        badge: badgeOf(card)
+                    };
+                });
+                try {
+                    sessionStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+                } catch (e) { /* מצב פרטי בדפדפן - ממשיכים בלי שמירה */ }
+            }
+            function applyDraft() {
+                var data = readDraft();
+                if (!data) { return; }
+                cards().forEach(function (card) {
+                    var saved = data[srcOf(card)];
+                    if (!saved) { return; }
+                    setStatus(card, saved.status);
+                    setPrice(card, saved.price);
+                    setBadge(card, saved.badge);
+                });
+            }
+
+            // ---------- פאנל הניהול ----------
+            function isAdminUrl() {
+                return new URLSearchParams(window.location.search).has('admin');
+            }
+
+            function renderAdminList() {
+                listBox.innerHTML = cards().map(function (card, i) {
+                    var status = statusOf(card);
+                    var badge = badgeOf(card);
+                    return '' +
+                        '<div class="admin-row' + (status === 'sold' ? ' is-sold' : '') + '">' +
+                            '<img class="admin-thumb" src="' + escapeHtml(srcOf(card)) + '" alt="">' +
+                            '<div class="admin-row-title">' + escapeHtml(titleOf(card)) + '</div>' +
+                            '<label class="admin-field">מחיר (₪)' +
+                                '<input type="number" min="0" step="1" value="' + priceOf(card) + '" ' +
+                                    'onchange="adminUpdate(' + i + ', &quot;price&quot;, this.value)">' +
+                            '</label>' +
+                            '<label class="admin-field">סטטוס' +
+                                '<select onchange="adminUpdate(' + i + ', &quot;status&quot;, this.value)">' +
+                                    '<option value="available"' + (status === 'available' ? ' selected' : '') + '>זמין</option>' +
+                                    '<option value="sold"' + (status === 'sold' ? ' selected' : '') + '>נמכר</option>' +
+                                '</select>' +
+                            '</label>' +
+                            '<label class="admin-field">תגית' +
+                                '<select onchange="adminUpdate(' + i + ', &quot;badge&quot;, this.value)">' +
+                                    '<option value=""' + (!badge ? ' selected' : '') + '>ללא</option>' +
+                                    '<option value="new"' + (badge === 'new' ? ' selected' : '') + '>חדש</option>' +
+                                    '<option value="popular"' + (badge === 'popular' ? ' selected' : '') + '>פופולרי</option>' +
+                                    '<option value="sale"' + (badge === 'sale' ? ' selected' : '') + '>מבצע</option>' +
+                                '</select>' +
+                            '</label>' +
+                        '</div>';
+                }).join('');
+            }
+
+            function showAdminContent() {
+                lockBox.hidden = true;
+                contentBox.hidden = false;
+                renderAdminList();
+            }
+
+            window.tryUnlockAdmin = function () {
+                if (passInput.value === ADMIN_PASSCODE) {
+                    try { sessionStorage.setItem(UNLOCK_KEY, 'true'); } catch (e) { /* ignore */ }
+                    lockError.hidden = true;
+                    showAdminContent();
+                } else {
+                    lockError.hidden = false;
+                }
+            };
+
+            window.adminUpdate = function (index, field, value) {
+                var card = cards()[index];
+                if (!card) { return; }
+                if (field === 'price') { setPrice(card, value); }
+                if (field === 'status') { setStatus(card, value); }
+                if (field === 'badge') { setBadge(card, value); }
+                saveDraft();
+                syncOrderForm();
+                renderAdminList();
+
+                /* מציגים את כל הציורים ומסמנים את הפילטר "הכל",
+                   כדי שהשינוי ייראה מיד בגלריה שמתחת לפאנל. */
+                cards().forEach(function (c) { c.style.display = 'block'; });
+                var filterButtons = document.querySelectorAll('.filter-controls .filter-btn');
+                filterButtons.forEach(function (b, i) { b.classList.toggle('active', i === 0); });
+            };
+
+            window.discardAdminChanges = function () {
+                if (!window.confirm('לבטל את כל השינויים שעדיין לא הורדו?')) { return; }
+                try { sessionStorage.removeItem(DRAFT_KEY); } catch (e) { /* ignore */ }
+                window.location.reload();
+            };
+
+            // ---------- ייצוא קובץ index.html מעודכן ----------
+            /* אם מיינו את הגלריה, מחזירים את הכרטיסים לסדר המקורי
+               (יחד עם הערות ה-HTML שלהם) כדי שהקובץ יישאר מסודר. */
+            function restoreOriginalOrder(clonedGallery, clonedCards) {
+                var currentOrder = clonedCards.map(srcOf);
+                var unchanged = currentOrder.length === originalOrder.length &&
+                    currentOrder.every(function (src, i) { return src === originalOrder[i]; });
+                if (unchanged) { return; }
+
+                var bySrc = {};
+                clonedCards.forEach(function (card) { bySrc[srcOf(card)] = card; });
+
+                var entries = originalOrder.map(function (src) {
+                    return bySrc[src] ? { card: bySrc[src], comment: originalComments[src] } : null;
+                }).filter(function (entry) { return entry !== null; });
+
+                clonedGallery.innerHTML = '';
+                entries.forEach(function (entry) {
+                    clonedGallery.appendChild(document.createTextNode('\n                '));
+                    if (entry.comment) {
+                        clonedGallery.appendChild(document.createComment(entry.comment));
+                        clonedGallery.appendChild(document.createTextNode('\n                '));
+                    }
+                    clonedGallery.appendChild(entry.card);
+                });
+                clonedGallery.appendChild(document.createTextNode('\n            '));
+            }
+
+            function buildExportHtml() {
+                var clone = document.documentElement.cloneNode(true);
+
+                // פאנל הניהול חוזר למצב סגור ונעול
+                var cPanel = clone.querySelector('#adminPanel');
+                if (cPanel) { cPanel.setAttribute('hidden', ''); }
+                var cLock = clone.querySelector('#adminLock');
+                if (cLock) { cLock.removeAttribute('hidden'); }
+                var cContent = clone.querySelector('#adminContent');
+                if (cContent) { cContent.setAttribute('hidden', ''); }
+                var cError = clone.querySelector('#adminLockError');
+                if (cError) { cError.setAttribute('hidden', ''); }
+                var cList = clone.querySelector('#adminList');
+                if (cList) { cList.innerHTML = ''; }
+                var cPass = clone.querySelector('#adminPasscodeInput');
+                if (cPass) { cPass.removeAttribute('value'); }
+
+                // ניקוי מצב תצוגה זמני: סינון, מיון, תמונות שנכשלו
+                var cGallery = clone.querySelector('#galleryContainer');
+                var cCards = Array.prototype.slice.call(cGallery.querySelectorAll('.artwork'));
+                cCards.forEach(function (card) {
+                    card.style.removeProperty('display');
+                    if (!card.getAttribute('style')) { card.removeAttribute('style'); }
+                    var img = card.querySelector('img');
+                    if (img) { img.removeAttribute('style'); }
+                });
+                restoreOriginalOrder(cGallery, cCards);
+
+                // ניקוי מצב זמני של תפריט, לייטבוקס וטופס
+                var cBody = clone.querySelector('body');
+                if (cBody) { cBody.removeAttribute('style'); }
+                var cNav = clone.querySelector('#navLinks');
+                if (cNav) { cNav.classList.remove('active'); }
+                var cLightbox = clone.querySelector('#lightbox');
+                if (cLightbox) { cLightbox.classList.remove('active'); }
+                var cLightboxImg = clone.querySelector('#lightbox-img');
+                if (cLightboxImg) {
+                    cLightboxImg.setAttribute('src', '');
+                    cLightboxImg.setAttribute('alt', '');
+                }
+                var cFilters = clone.querySelectorAll('.filter-controls .filter-btn');
+                cFilters.forEach(function (btn, i) { btn.classList.toggle('active', i === 1); });
+                var cFormMessage = clone.querySelector('#form-message');
+                if (cFormMessage && formMessageStyle !== null) {
+                    cFormMessage.setAttribute('style', formMessageStyle);
+                }
+
+                return '<!DOCTYPE html>\n' + clone.outerHTML + '\n';
+            }
+
+            window.exportUpdatedSite = function () {
+                var blob = new Blob([buildExportHtml()], { type: 'text/html;charset=utf-8' });
+                var url = URL.createObjectURL(blob);
+                var link = document.createElement('a');
+                link.href = url;
+                link.download = 'index.html';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            };
+
+            // ---------- הפעלה ----------
+            if (isAdminUrl()) {
+                panel.hidden = false;
+                applyDraft();
+                if (passInput) {
+                    passInput.addEventListener('keydown', function (e) {
+                        if (e.key === 'Enter') { window.tryUnlockAdmin(); }
+                    });
+                }
+                var unlocked = false;
+                try { unlocked = sessionStorage.getItem(UNLOCK_KEY) === 'true'; } catch (e) { /* ignore */ }
+                if (unlocked) { showAdminContent(); }
+            }
+
+            syncOrderForm();
+        })();
     </script>
 </body>
-  </html>
+</html>
